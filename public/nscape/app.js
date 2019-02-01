@@ -70,11 +70,17 @@ nscape.newGame = function() {
                     $("#room").append("<div class='player " + number + "'>" + number + "</div>");
                 }
 
-                $(".player." + number).css("background-color", p.colour);
-                $(".player." + number).css("left", p.left);
-                $(".player." + number).css("top", p.top);
-            })
+                var cl = $(".player." + number).css("left");
+                var ct = $(".player." + number).css("top");
 
+                $(".player." + number).css("background-color", p.colour);
+
+                if (Math.abs(cl - p.left) + Math.abs(ct - c.top) > 16) {
+
+                    $(".player." + number).css("left", p.left);
+                    $(".player." + number).css("top", p.top);
+                }
+            });
         }
     }
 
