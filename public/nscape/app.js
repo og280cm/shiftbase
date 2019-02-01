@@ -75,7 +75,7 @@ nscape.newGame = function() {
 
                 $(".player." + number).css("background-color", p.colour);
 
-                if (Math.abs(cl - p.left) + Math.abs(ct - c.top) > 16) {
+                if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 16) {
 
                     $(".player." + number).css("left", p.left);
                     $(".player." + number).css("top", p.top);
