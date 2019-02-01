@@ -1,0 +1,265 @@
+#nrich {
+  position: absolute;
+  width: 700px;
+  height: 596px;
+  border: 1px solid black;
+  background-color: #dde;
+}
+
+#nmenu {
+  position: absolute;
+  top: -556px;
+  left: 0px;
+  width: 700px;
+  height: 600px;
+  font-family: Verdana, tahoma, arial, helvetica, sans-serif;
+  background-image: url("../wrapperbits/media/v6/carbonFibre.png");
+  border: 1px solid black;
+}
+
+#nsettings {
+  position: absolute;
+  top: 4px;
+  left: 652px;
+  width: 38px;
+  height: 38px;
+  background-image: url("../nrich/settings.png");
+}
+
+.nrich-settings-header {
+  position: absolute;
+  left: 150px;
+  top: 20px;
+  width: 380px;
+  height: 38px;
+  padding-top: 10px;
+  background-color: #fffdf6;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 24px;
+  color: #282040;
+  text-align: center;
+}
+
+.nrich-setting {
+  position: absolute;
+  left: -1px;
+  top: 0px;
+  width: 526px;
+  height: 44px;
+  padding-left: 92px;
+  padding-right: 92px;
+  background-color: #d6d8f6;
+  border-top: 1px solid #77d;
+  border-bottom: 1px solid #77d;
+  color: #121448;
+}
+
+.nrich-setting-name {
+  float: left;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-right: 14px;
+  text-transform: capitalize;
+}
+
+.nrich-setting-option {
+  float: left;
+  font-size: 20px;
+  padding-top: 1px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 5px;
+  margin-top: 6px;
+  margin-left: 4px;
+  background-color: #9494b4;
+  border: 1px solid #447;
+}
+
+.active {
+  padding-top: 1px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 5px;
+  background-color: #b4ddf4;
+  border: 1px solid #44a;
+}
+
+.nrich-settings-apply {
+  position: absolute;
+  left: 106px;
+  top: 382px;
+  width: 472px;
+  height: 34px;
+  padding-top: 10px;
+  background-color: #fbfffd;
+  border: 1px solid #497;
+  border-radius: 6px;
+  font-size: 22px;
+  color: #252;
+  text-align: center;
+}
+
+.nrich-settings-full-screen {
+  position: absolute;
+  left: -1px;
+  top: 436px;
+  width: 526px;
+  padding-left: 92px;
+  padding-right: 92px;
+  height: 34px;
+  padding-top: 6px;
+  background-color: #d6d8f6;
+  border: 1px solid #77d;
+  font-size: 22px;
+  color: #121448;
+  text-align: center;
+}
+
+.full-screen-100 {
+  position: absolute;
+  left: 94px;
+  top: 486px;
+  width: 154px;
+  height: 34px;
+  padding-top: 8px;
+  background-color: #fbfffd;
+  border: 1px solid #497;
+  border-radius: 6px;
+  font-size: 22px;
+  color: #252;
+  text-align: center;
+}
+
+.full-screen-150 {
+  position: absolute;
+  left: 264px;
+  top: 486px;
+  width: 154px;
+  height: 34px;
+  padding-top: 8px;
+  background-color: #fbfffd;
+  border: 1px solid #497;
+  border-radius: 6px;
+  font-size: 22px;
+  color: #252;
+  text-align: center;
+}
+
+.full-screen-200 {
+  position: absolute;
+  left: 436px;
+  top: 486px;
+  width: 154px;
+  height: 34px;
+  padding-top: 8px;
+  background-color: #fbfffd;
+  border: 1px solid #497;
+  border-radius: 6px;
+  font-size: 22px;
+  color: #252;
+  text-align: center;
+}
+
+.nrich-settings-title {
+  position: absolute;
+  left: 100px;
+  top: 560px;
+  width: 484px;
+  height: 38px;
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+}
+
+#promo-text {
+  color: black;
+}
+
+#promo-responsive {
+  height: 30px;
+  width: 638px;
+  margin-top: 2px;
+  padding-top: 12px;
+  padding-right: 64px;
+  font-style: italic;
+  background-color: #cbccc2;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+#promo-responsive #promo-new-window {
+  margin-left: 520px;
+  margin-top: -26px;
+  width: 36px;
+  height: 36px;
+}
+
+#promo-100 {
+  height: 36px;
+  width: 638px;
+  margin-top: 2px;
+  padding-top: 12px;
+  padding-right: 66px;
+  font-style: italic;
+  background-color: #cbccc2;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#promo-100 #promo-new-window {
+  margin-left: 520px;
+  margin-top: -26px;
+  width: 36px;
+  height: 36px;
+}
+
+#promo-150 {
+  height: 36px;
+  width: 986px;
+  margin-top: 304px;
+  padding-top: 12px;
+  padding-right: 70px;
+  font-style: italic;
+  background-color: #cbccc2;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#promo-150 #promo-new-window {
+  margin-left: 720px;
+  margin-top: -26px;
+  width: 36px;
+  height: 36px;
+}
+
+#promo-200 {
+  height: 36px;
+  width: 1334px;
+  margin-top: 608px;
+  padding-top: 12px;
+  padding-right: 74px;
+  font-style: italic;
+  background-color: #cbccc2;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#promo-200 #promo-new-window {
+  margin-left: 920px;
+  margin-top: -26px;
+  width: 36px;
+  height: 36px;
+}
+
+input {
+  width: 260px;
+}
+
+/*# sourceMappingURL=nrich.css.map */

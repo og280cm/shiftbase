@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+
+	<title>node test stuff</title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<style>
+
+</style>
+</head>
+
+<body>
+<h1>Games on this server</h1>
+<div class="link">
+  <a href="dominoes">Dominoes</a>
+</div>
+<div class="link">
+  <a href="countdown">Countdown</a>
+</div>
+<div class="link">
+  <a href="nscape">nscape room</a>
+</div>
+
+<script>
+
+$().ready(function(){
+	    "use strict";
+
+        var webSocket = new WebSocket('ws://localhost:3000/echo/');
+
+        webSocket.onerror = function(event) {
+        	console.log("onerror");
+            //onError(event);
+        };
+
+        webSocket.onopen = function(event) {
+        	console.log("onopen");
+            //onOpen(event);
+
+	        webSocket.send("beans");
+        };
+
+        webSocket.onmessage = function(event) {
+        	console.log("onmessage");
+            //onMessage(event);
+
+        	console.log("I got the message: ")
+        	console.log(event);
+        };
+
+});
+
+</script>
+</body>
+</html>

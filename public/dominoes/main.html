@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    
+<title>Dominoes Together</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="../jquery-ui.js"></script>
+<script src="../jquery.ui.touch-punch.min.js"></script>
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="../nrich/nrich.css" />
+
+<script src="../nrich/nrich.js"></script>
+<script src="../nrich/parseUri.js"></script>
+
+<script src="app.js"></script>
+
+<script>
+$().ready(function(){
+
+    "use strict";
+
+    var url_string = window.location;
+    var url = parseUri(url_string);
+
+    console.log(url_string);
+    console.log(url);
+
+    var settings = {
+//        "level": url.queryKey["level"],
+        // "style": url.queryKey["style"]
+    }
+
+    // if (settings.level == undefined) {
+    //     settings.level = 1;
+    // }
+
+    // if (settings.style == undefined) {
+    //     settings.style = "textured";
+    // }
+
+    nrich.permittedSettings({
+        "options": {
+            // "level": [1, 2, 3],
+//            "style": ["textured", "flat"]
+        },
+        "current": settings,
+        "apply": dominoes.init,
+        "url": url.path
+    });
+    nrich.splash("pinks", true);
+
+    //dominoes.init(settings);
+});
+</script>
+
+<body>
+<div id="container">
+    <div id="play-container">
+    </div>
+
+    <div id="controls">
+        <div id="rotate-ccw">        
+        </div>
+        <div id="select-another">
+        </div>
+        <div id="rotate-cw">
+        </div>
+
+        <div id="move-up">
+        </div>
+        <div id="move-right">
+        </div>
+        <div id="move-down">
+        </div>
+        <div id="move-left">
+        </div>
+
+        <div id="play-text">
+            You can move the dominoes either using these buttons, or by dragging them around.
+        </div>
+
+        <div id="scoop-button">
+            Scoop
+        </div>
+
+        <div id="deal-button">
+            Deal
+        </div>
+
+    </div>
+</div>
+<pre id="server-state">
+</pre>
+<div id="nmenu">
+    <div class="nrich-settings-header">
+        Settings
+    </div>
+    <div class="nrich-settings-apply">
+        Restart the activity with these settings
+    </div>
+    <div class="nrich-settings-full-screen">
+        Or, open a window with these settings at
+    </div>
+    <div class="full-screen-100">
+        100% size
+    </div>
+    <div class="full-screen-150">
+        150% size
+    </div>
+    <div class="full-screen-200">
+        200% size
+    </div>
+    <div class="nrich-settings-title">
+        Dominoes
+    </div>    
+</div>
+<div id="nsettings">
+</div>
+<div id="nrich">
+    <img class="hidden" id="cloud1" src="../nrich/cloud1.png"></img>
+    <img class="hidden" id="cloud2" src="../nrich/cloud2.png"></img>
+    <img class="hidden" id="cloud3" src="../nrich/cloud3.png"></img>
+    <img class="hidden" id="cloud4" src="../nrich/cloud4.png"></img>
+    <canvas id="nrich-canvas">
+</div>
+</body>
+</html>

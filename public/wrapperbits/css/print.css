@@ -1,0 +1,112 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#header .site-navigation,#header .strapline,#header .sitename { display:none !important; }
+#footer { display:none !important; }
+#cloud { display:none !important; }
+#infobar { display:none !important; }
+#adminbar { display:none !important; }
+#mainmenu { display:none !important; }
+#problemviewmenu { display:none !important;width:0px; }
+#notpublished { display:none !important;width:0px; }
+
+#problemview { float:none !important;padding:0 !important;margin-left:0px !important;}
+#problemviewtitle { display:none ! important; }
+#static { background-image:none ! important;padding:0 !important;margin:0 !important; }
+#problemview img {padding:0px !important; }
+#problemview .typeset img {padding:0 !important; }
+#problemview h3 {margin-left:0 !important; }
+#staticbanner {color:#000000 !important; }
+#staticbanner h1 {padding-top: 1em; font-size: 2em !important;  }
+body,p,div {font-family:Arial;background-color:#FFF;max-width:640px !important;color:#000; }
+#bodydiv:before {
+    font-size: 0.5em !important;
+    content: "Copyright © University of Cambridge. All rights reserved.";
+}
+.blogButton { padding: 0; margin: 0; border: 0;}
+#columntwo { margin-left:0px !important;}
+.footer-menu { display:none !important; }
+
+a:after{
+    content: " " attr(href) " ";
+}
+
+/* deal with icon visibility */
+.iconplaceholder {display:inline !important;opacity: 1 !important;height:80px;width:80px;    border:0;}
+.image-wrap {
+    background-size: 0px 0px;
+    background-image: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    box-shadow: 0;
+    -moz-box-shadow: 0;
+    -webkit-box-shadow: 0;
+    border:0;
+}
+.image-wrap:after {
+    position: absolute;
+    content: '';
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: none;
+    border:0;
+}
+
+/* sort out big button pages */
+
+.latest {display:none;}
+.collection {display:none;}
+.trendinglist {display: none;}
+.relatedlist {display: none;}
+.heading {display:none;}
+/*.banner {display:none;}*/
+.featureintro {top:20px !important;left:0px !important;} 
+#stemLinks {display: none;} 
