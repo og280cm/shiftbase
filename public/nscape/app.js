@@ -9,7 +9,15 @@ nscape.newGame = function() {
     // nscape.player = $("<div class='player'></div>");
     // $("#room").empty().append(nscape.player);
 
-    nscape.ws = new WebSocket('ws://localhost:8080/nscape');
+    var currentHostname = window.location.hostname;
+
+    console.log("trying to connect to : " + currentHostname);
+
+    var socketAddress = "ws://" + currentHostname + "/nscape";
+
+    nscape.ws = new WebSocket(socketAddress);
+
+//    nscape.ws = new WebSocket('ws://localhost:8080/nscape');
 
     nscape.ws.onerror = function(event) {
         console.log("onerror");
