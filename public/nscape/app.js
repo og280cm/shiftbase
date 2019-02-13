@@ -128,7 +128,7 @@ nscape.newGame = function() {
                     $(".player." + number).css("top", p.top);
                 }
 
-                $(".active").removeClass("active");
+                $(".bestood").removeClass("bestood");
 
                 nscape.pads.left = undefined;
                 nscape.pads.right = undefined;
@@ -136,7 +136,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
 
                     console.log("p1 padleft1 sameplace");
-                    $("#room1-pad-left-1").addClass("active");
+                    $("#room1-pad-left-1").addClass("bestood");
 
                     nscape.pads.left = 1;
                 }
@@ -144,7 +144,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.1", "#room1-pad-left-2")) {
 
                     console.log("p1 padleft2 sameplace");
-                    $("#room1-pad-left-2").addClass("active");
+                    $("#room1-pad-left-2").addClass("bestood");
 
                     nscape.pads.left = 2;
                 }
@@ -152,7 +152,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.1", "#room1-pad-left-3")) {
 
                     console.log("p1 padleft3 sameplace");
-                    $("#room1-pad-left-3").addClass("active");
+                    $("#room1-pad-left-3").addClass("bestood");
 
                     nscape.pads.left = 3;
                 }
@@ -160,7 +160,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.1", "#room1-pad-left-4")) {
 
                     console.log("p1 padleft4 sameplace");
-                    $("#room1-pad-left-4").addClass("active");
+                    $("#room1-pad-left-4").addClass("bestood");
 
                     nscape.pads.left = 4;
                 }
@@ -168,7 +168,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.1", "#room1-pad-left-5")) {
 
                     console.log("p1 padleft5 sameplace");
-                    $("#room1-pad-left-5").addClass("active");
+                    $("#room1-pad-left-5").addClass("bestood");
 
                     nscape.pads.left = 5;
                 }
@@ -177,7 +177,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.2", "#room1-pad-right-1")) {
 
                     console.log("p2 padright1 sameplace");
-                    $("#room1-pad-right-1").addClass("active");
+                    $("#room1-pad-right-1").addClass("bestood");
 
                     nscape.pads.right = 1;
                 }
@@ -185,7 +185,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.2", "#room1-pad-right-2")) {
 
                     console.log("p2 padright2 sameplace");
-                    $("#room1-pad-right-2").addClass("active");
+                    $("#room1-pad-right-2").addClass("bestood");
 
                     nscape.pads.right = 2;
                 }
@@ -193,7 +193,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.2", "#room1-pad-right-3")) {
 
                     console.log("p2 padright3 sameplace");
-                    $("#room1-pad-right-3").addClass("active");
+                    $("#room1-pad-right-3").addClass("bestood");
 
                     nscape.pads.right = 3;
                 }
@@ -201,7 +201,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.2", "#room1-pad-right-4")) {
 
                     console.log("p2 padright4 sameplace");
-                    $("#room1-pad-right-4").addClass("active");
+                    $("#room1-pad-right-4").addClass("bestood");
 
                     nscape.pads.right = 4;
                 }
@@ -209,7 +209,7 @@ nscape.newGame = function() {
                 if (nscape.sameplace(".player.2", "#room1-pad-right-5")) {
 
                     console.log("p2 padright5 sameplace");
-                    $("#room1-pad-right-5").addClass("active");
+                    $("#room1-pad-right-5").addClass("bestood");
 
                     nscape.pads.right = 5;
                 }
@@ -221,10 +221,62 @@ nscape.newGame = function() {
                 console.log("fleft: " + fleft);
                 console.log("ftop: " + ftop);
 
-                if (nscape.pads.left == 2 && nscape.pads.right == 4) {
+                var outputrep = "";
 
-                    $("#room1-output").empty().append("11111111");
+                if (nscape.pads.left == 2 || nscape.pads.left == 5 || nscape.pads.right == 1) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
                 }
+
+                if (nscape.pads.left == 2 || nscape.pads.left == 5 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 1 || nscape.pads.left == 5 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 2 || nscape.pads.left == 1 || nscape.pads.right == 2) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 2 || nscape.pads.right == 1 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 2 || nscape.pads.left == 3 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 2 || nscape.pads.left == 5 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                if (nscape.pads.left == 2 || nscape.pads.left == 4 || nscape.pads.right == 4) {
+                    outputrep += "1";
+                }  else {
+                    outputrep += "0";
+                }
+
+                $("#room1-output").empty().append(outputrep);
+
+                // if (nscape.pads.left == 2 && nscape.pads.right == 4) {
+
+                //     $("#room1-output").empty().append("11111111");
+                // }
 
             });
         }
