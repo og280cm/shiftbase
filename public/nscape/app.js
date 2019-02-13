@@ -105,7 +105,7 @@ nscape.newGame = function() {
                     // $(".player." + number).css("top", p.top);
 
                     var smoothleft = cl + ((cl - p.left) / 2);
-                    var smoothleft = ct + ((ct - p.top) / 2);
+                    var smoothtop = ct + ((ct - p.top) / 2);
 
                     $(".player." + number).css("left", smoothleft);
                     $(".player." + number).css("top", smoothtop);
