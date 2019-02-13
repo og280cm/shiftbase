@@ -91,6 +91,9 @@ nscape.newGame = function() {
                 var cl = $(".player." + number).css("left");
                 var ct = $(".player." + number).css("top");
 
+                console.log("cl: " + cl);
+                console.log("ct: " + ct);
+
                 $(".player." + number).css("background-color", p.colour);
 
                 if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 16) {
@@ -110,6 +113,7 @@ nscape.newGame = function() {
                 var fleft = parseInt($(".player." + nscape.clientID).css("left"));
                 var ftop = parseInt($(".player." + nscape.clientID).css("top"));
 
+                console.log("clientID: " + nscape.clientID);
                 console.log("fleft: " + fleft);
                 console.log("ftop: " + ftop);
 
