@@ -96,19 +96,15 @@ nscape.newGame = function() {
 
                 $(".player." + number).css("background-color", p.colour);
 
-                if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 16) {
+                console.log("difference: " + Math.abs(cl - p.left) + Math.abs(ct - p.top));
+
+                if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 8) {
 
                     console.log("difference between server and client position is greater than 4");
                     console.log("accepting server version: " + p.left + ", " + p.top);
 
-                    // $(".player." + number).css("left", p.left);
-                    // $(".player." + number).css("top", p.top);
-
-                    var smoothleft = cl + ((p.left - cl) / 2);
-                    var smoothtop = ct + ((p.top - ct) / 2);
-
-                    $(".player." + number).css("left", smoothleft);
-                    $(".player." + number).css("top", smoothtop);
+                    $(".player." + number).css("left", p.left);
+                    $(".player." + number).css("top", p.top);
                 }
 
                 if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
