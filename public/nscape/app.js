@@ -95,6 +95,9 @@ nscape.newGame = function() {
 
                 if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 16) {
 
+                    console.log("difference between server and client position is greater than 4");
+                    console.log("accepting server version: " + p.left + ", " + p.top);
+
                     $(".player." + number).css("left", p.left);
                     $(".player." + number).css("top", p.top);
                 }
