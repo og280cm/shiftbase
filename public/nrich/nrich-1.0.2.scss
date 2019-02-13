@@ -1,0 +1,288 @@
+
+$nrich-active-colour: #e6b3e6;
+//#cdcbff; pale blue
+    // #b4ddf4;
+
+$nrich-inactive-colour: #9f9fb8;
+    // #9494b4
+
+$nrich-setting-background-colour: #dadaed;
+    // #d6d8f6
+
+$nrich-settings-header-colour: #deeaf2;
+
+#nrich {
+    position: absolute;
+    // width: 100vw;
+    // height: 100vh;
+    width: 700px;
+    height: 598px;
+    border: 1px solid black;
+    background-color: #dde;
+}
+
+#nmenu {
+    position: absolute;
+    top: -556px;
+    left: 0px;
+    width: 702px;
+    height: 600px;
+    font-family: Verdana,tahoma,arial,helvetica,sans-serif;
+//    background-color: #5c9;
+    background-image: url("../wrapperbits/media/v6/carbonFibre.png");
+}
+
+#nmenu.expanded {
+}
+
+#nsettings {
+    position: absolute;
+    top: 4px;
+    left: 652px;
+    width: 38px;
+    height: 38px;
+//    background-color: #a6d;
+    background-image: url("../nrich/settings.png");
+}
+
+.nrich-settings-header {
+    position: absolute;
+    left: 150px;
+    top: 20px;
+    width: 380px;
+    height: 38px;
+    padding-top: 10px;
+//    background-color: #fffdf6;
+    background-color: $nrich-settings-header-colour;
+    border: 1px solid #000;
+    border-radius: 6px;
+    font-size: 24px;
+    color: #282040;
+    text-align: center;
+}
+
+.nrich-setting {
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    width: 552px;
+    height: 44px;
+    padding-left: 72px;
+    padding-right: 80px;
+    background-color: $nrich-setting-background-colour;
+    border-top: 1px solid #77d;
+    border-bottom: 1px solid #77d;
+    color: #121448;    
+}
+
+.nrich-setting-name {
+    float: left;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-right: 14px;
+    text-transform: capitalize;
+}
+
+.nrich-setting-option {
+    float: left;
+    font-size: 20px;
+    padding-top: 1px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 5px;
+    margin-top: 6px;
+    margin-left: 4px;
+    background-color: $nrich-inactive-colour;
+    border: 1px solid #447;
+}
+
+.nrich-setting-option.form {
+  padding-top: 1px;
+  padding-bottom: 3px;
+}
+
+.active {
+    padding-top: 1px;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-bottom: 5px;
+    background-color: $nrich-active-colour;
+    border: 1px solid #44a;
+}
+
+.nrich-settings-full-screen {
+    position: absolute;
+    left: -1px;
+    top: 384px;
+    width: 538px;
+    padding-left: 82px;
+    padding-right: 82px;
+    height: 34px;
+    padding-top: 6px;
+    background-color: $nrich-setting-background-colour;
+    border: 1px solid #77d;
+    font-size: 22px;
+    color: #121448;
+    text-align: center;
+}
+
+.nrich-apply-same-window {
+    position: absolute;
+    left: 106px;
+    top: 436px;
+    width: 472px;
+    height: 34px;
+    padding-top: 8px;
+    // background-color: #fbfffd;
+
+    background: #e9fcf3; /* Old browsers */
+    background: -moz-linear-gradient(top, #e9fcf3 0%, #dff9e9 58%, #c0ebca 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e9fcf3 0%,#dff9e9 58%,#c0ebca 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e9fcf3 0%,#dff9e9 58%,#c0ebca 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcf3', endColorstr='#c0ebca',GradientType=0 ); /* IE6-9 */
+
+    border: 1px solid #497;
+    border-radius: 6px;
+    font-size: 22px;
+    color: #252;
+    text-align: center;
+}
+
+.nrich-apply-same-window:hover {
+
+    background: #edfef6; /* Old browsers */
+    background: -moz-linear-gradient(top, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edfef6', endColorstr='#c8efce',GradientType=0 ); /* IE6-9 */
+}
+
+.nrich-apply-new-window {
+    position: absolute;
+    left: 106px;
+    top: 490px;
+    width: 472px;
+    height: 34px;
+    padding-top: 8px;
+//    background-color: #fbfffd;
+
+    background: #e9fcf3; /* Old browsers */
+    background: -moz-linear-gradient(top, #e9fcf3 0%, #dff9e9 58%, #c0ebca 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e9fcf3 0%,#dff9e9 58%,#c0ebca 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e9fcf3 0%,#dff9e9 58%,#c0ebca 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcf3', endColorstr='#c0ebca',GradientType=0 ); /* IE6-9 */
+
+    border: 1px solid #497;
+    border-radius: 6px;
+    font-size: 22px;
+    color: #252;
+    text-align: center;
+}
+
+.nrich-apply-new-window:hover {
+
+    background: #edfef6; /* Old browsers */
+    background: -moz-linear-gradient(top, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #edfef6 0%, #e6fced 58%, #c8efce 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edfef6', endColorstr='#c8efce',GradientType=0 ); /* IE6-9 */
+}
+
+.nrich-settings-title {
+    position: absolute;
+    left: 100px;
+    top: 560px;
+    width: 484px;
+    height: 38px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+}
+
+#promo-100 {
+  height: 36px;
+  width: 638px;
+  margin-top: 2px;
+  padding-top: 12px;
+  padding-right: 66px;
+  font-style: italic;
+  background-color: #cbccc2;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+#promo-100 #promo-new-window {
+  margin-left: 520px;
+  margin-top: -26px;
+  width: 36px;
+  height: 36px;
+}
+
+#promo-text {
+    color: black;
+}
+
+#promo-responsive {
+    height: 30px;
+    width: 638px;
+    margin-top: 2px;
+    padding-top: 12px;
+    padding-right: 64px;
+    font-style: italic;
+    background-color: #cbccc2;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+#promo-responsive #promo-new-window {
+    margin-left: 520px;
+    margin-top: -26px;
+    width: 36px;
+    height: 36px;
+}
+
+.nrich-setting input {
+    width: 260px;
+    height: 16px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    top: -2px;
+}
+
+#page-container {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.interactivity-container {
+  position: absolute;
+  overflow: hidden;
+  width: 702px;
+  height: 648px;
+}
+
+.interactivity-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#promo-container {
+  position: absolute;
+  bottom: -8px;
+  width: 100%;
+  background-color: #fff;
+}

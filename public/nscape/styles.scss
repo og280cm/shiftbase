@@ -23,30 +23,102 @@ html {
 #header {
   position: absolute;
   left: 50px;
-  top: 28px;
+  top: 8px;
   width: 576px;
-  height: 32px;
+  height: 28px;
   // height: 352px;
   border-radius: 4px;
   border: 1px solid #423;
-  background-color: #a68872;
+  background-color: #b6a282;
   color: #423;
   font-size: 22px;
-  padding: 10px;
+  padding: 6px;
   text-align: center;
 }
 
 #room {
   position: absolute;
-  left: 32px;
-  top: 114px;
-  width: 636px;
-  height: 400px;
+  left: 26px;
+  top: 58px;
+  width: 644px;
+  height: 384px;
   // height: 352px;
   border-radius: 4px;
   border: 1px solid #226;
   background-color: #46b292;
   font-size: 20px;
+}
+
+#touch-controls {
+  position: absolute;
+  left: 46px;
+  top: 454px;
+  width: 608px;
+  height: 92px;
+  // height: 352px;
+  border-radius: 4px;
+  border: 1px solid #226;
+  background-color: #466266;
+}
+
+#touch-left {
+  position: absolute;
+  left: 38px;
+  top: 28px;
+  width: 34px;
+  height: 34px;
+  // height: 352px;
+  border-radius: 16px;
+  border: 1px solid #226;
+  background-color: #c6c266;
+}
+
+#touch-up {
+  position: absolute;
+  left: 66px;
+  top: 2px;
+  width: 34px;
+  height: 34px;
+  // height: 352px;
+  border-radius: 16px;
+  border: 1px solid #226;
+  background-color: #c6c266;
+}
+
+#touch-right {
+  position: absolute;
+  left: 94px;
+  top: 28px;
+  width: 34px;
+  height: 34px;
+  // height: 352px;
+  border-radius: 16px;
+  border: 1px solid #226;
+  background-color: #c6c266;
+}
+
+#touch-down {
+  position: absolute;
+  left: 66px;
+  top: 54px;
+  width: 34px;
+  height: 34px;
+  // height: 352px;
+  border-radius: 16px;
+  border: 1px solid #226;
+  background-color: #c6c266;
+}
+
+#touch-act {
+  position: absolute;
+  left: 502px;
+  top: 22px;
+  width: 44px;
+  height: 44px;
+  // height: 352px;
+  border-radius: 20px;
+  border: 1px solid #226;
+  background-color: #db8664;
 }
 
 .player {

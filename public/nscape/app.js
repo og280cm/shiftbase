@@ -84,6 +84,38 @@ nscape.newGame = function() {
         }
     }
 
+    nscape.moveleft = function() {
+        $(".player." + nscape.clientID).css("left", parseInt($(".player." + nscape.clientID).css("left")) - 4);
+    }
+
+    nscape.moveup = function() {
+        $(".player." + nscape.clientID).css("top", parseInt($(".player." + nscape.clientID).css("top")) - 4);
+    }
+
+    nscape.moveright = function() {
+        $(".player." + nscape.clientID).css("left", parseInt($(".player." + nscape.clientID).css("left")) + 4);
+    }
+
+    nscape.movedown = function() {
+        $(".player." + nscape.clientID).css("top", parseInt($(".player." + nscape.clientID).css("top")) + 4);
+    }
+
+    $("#touch-left").click(function(e) {
+        nscape.moveleft();
+    });
+
+    $("#touch-up").click(function(e) {
+        nscape.moveup();
+    });
+
+    $("#touch-right").click(function(e) {
+        nscape.moveright();
+    });
+
+    $("#touch-down").click(function(e) {
+        nscape.movedown();
+    });
+
     $(document).bind('keydown', function(e) {
 
         var code = e.keyCode || e.which;
@@ -91,19 +123,19 @@ nscape.newGame = function() {
         console.log(code);
 
         if (code == 37) { 
-            $(".player." + nscape.clientID).css("left", parseInt($(".player." + nscape.clientID).css("left")) - 4);
+            nscape.moveleft();
         }
 
         if (code == 38) { 
-            $(".player." + nscape.clientID).css("top", parseInt($(".player." + nscape.clientID).css("top")) - 4);
+            nscape.moveup();
         }
 
         if (code == 39) { 
-            $(".player." + nscape.clientID).css("left", parseInt($(".player." + nscape.clientID).css("left")) + 4);
+            nscape.moveright();
         }
 
         if (code == 40) { 
-            $(".player." + nscape.clientID).css("top", parseInt($(".player." + nscape.clientID).css("top")) + 4);
+            nscape.movedown();
         }
     });
 
