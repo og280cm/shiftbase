@@ -102,10 +102,17 @@ nscape.newGame = function() {
                     $(".player." + number).css("top", p.top);
                 }
 
-                if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
+                // if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
 
-                    console.log("p1 padleft1 sameplace");
-                }
+                //     console.log("p1 padleft1 sameplace");
+                // }
+
+                var fleft = parseInt($(".player." + nscape.clientID).css("left"));
+                var ftop = parseInt($(".player." + nscape.clientID).css("top"));
+
+                console.log("fleft: " + fleft);
+                console.log("ftop: " + ftop);
+
             });
         }
     }
