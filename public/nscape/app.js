@@ -6,6 +6,8 @@ nscape.newGame = function() {
 
     nscape.cards = {};
 
+    nscape.pads = {};
+
     // nscape.player = $("<div class='player'></div>");
     // $("#room").empty().append(nscape.player);
 
@@ -126,12 +128,90 @@ nscape.newGame = function() {
                     $(".player." + number).css("top", p.top);
                 }
 
+                $(".active").removeClass("active");
+
+                nscape.pads.left = undefined;
+                nscape.pads.right = undefined;
+
                 if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
 
                     console.log("p1 padleft1 sameplace");
-                } else {
+                    $("#room1-pad-left-1").addClass("active");
 
-                    console.log("p1 padleft1 NOT sameplace");
+                    nscape.pads.left = 1;
+                }
+
+                if (nscape.sameplace(".player.1", "#room1-pad-left-2")) {
+
+                    console.log("p1 padleft2 sameplace");
+                    $("#room1-pad-left-2").addClass("active");
+
+                    nscape.pads.left = 2;
+                }
+
+                if (nscape.sameplace(".player.1", "#room1-pad-left-3")) {
+
+                    console.log("p1 padleft3 sameplace");
+                    $("#room1-pad-left-3").addClass("active");
+
+                    nscape.pads.left = 3;
+                }
+
+                if (nscape.sameplace(".player.1", "#room1-pad-left-4")) {
+
+                    console.log("p1 padleft4 sameplace");
+                    $("#room1-pad-left-4").addClass("active");
+
+                    nscape.pads.left = 4;
+                }
+
+                if (nscape.sameplace(".player.1", "#room1-pad-left-5")) {
+
+                    console.log("p1 padleft5 sameplace");
+                    $("#room1-pad-left-5").addClass("active");
+
+                    nscape.pads.left = 5;
+                }
+
+
+                if (nscape.sameplace(".player.2", "#room1-pad-right-1")) {
+
+                    console.log("p2 padright1 sameplace");
+                    $("#room1-pad-right-1").addClass("active");
+
+                    nscape.pads.right = 1;
+                }
+
+                if (nscape.sameplace(".player.2", "#room1-pad-right-2")) {
+
+                    console.log("p2 padright2 sameplace");
+                    $("#room1-pad-right-2").addClass("active");
+
+                    nscape.pads.right = 2;
+                }
+
+                if (nscape.sameplace(".player.2", "#room1-pad-right-3")) {
+
+                    console.log("p2 padright3 sameplace");
+                    $("#room1-pad-right-3").addClass("active");
+
+                    nscape.pads.right = 3;
+                }
+
+                if (nscape.sameplace(".player.2", "#room1-pad-right-4")) {
+
+                    console.log("p2 padright4 sameplace");
+                    $("#room1-pad-right-4").addClass("active");
+
+                    nscape.pads.right = 4;
+                }
+
+                if (nscape.sameplace(".player.2", "#room1-pad-right-5")) {
+
+                    console.log("p2 padright5 sameplace");
+                    $("#room1-pad-right-5").addClass("active");
+
+                    nscape.pads.right = 5;
                 }
 
                 var fleft = parseInt($(".player." + nscape.clientID).css("left"));
@@ -140,6 +220,11 @@ nscape.newGame = function() {
                 console.log("clientID: " + nscape.clientID);
                 console.log("fleft: " + fleft);
                 console.log("ftop: " + ftop);
+
+                if (nscape.pads.left == 2 && nscape.pads.right == 4) {
+
+                    $("#room1-output").empty().append("11111111");
+                }
 
             });
         }
