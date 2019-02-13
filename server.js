@@ -266,8 +266,7 @@ app.ws('/nscape', function(ws, req) {
 
   	if (m.notify == "position") {
 
-  	  console.log("POSITION request");
-
+  	  console.log("POSITION set request from " + m.data.ID);
   	  console.log(m);
 
   	  clients[m.data.ID].left = m.data.left;

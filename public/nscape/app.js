@@ -171,6 +171,9 @@ nscape.newGame = function() {
             d.left = parseInt($(".player." + nscape.clientID).css("left"));
             d.top = parseInt($(".player." + nscape.clientID).css("top"));
 
+            console.log("client:");
+            console.log(d);
+
             nscape.ws.send('{"notify": "position", "data": ' + JSON.stringify(d) + '}');
             nscape.ws.send('{"request": "state"}');
         }
