@@ -39,17 +39,23 @@ nscape.newGame = function() {
 
     nscape.sameplace = function(player, item) {
 
-        console.log("PL " + $(player).css("left"));
-        console.log("PT " + $(player).css("top"));
-        console.log("IL " + $(item).css("left"));
-        console.log("IT " + $(item).css("top"));
+        var pl = parseInt($(player).css("left"));
+        var pt = parseInt($(player).css("top"));
 
-        console.log("sameplace? x: " + Math.abs($(player).css("left") - $(item).css("left")));
-        console.log("sameplace? y: " + Math.abs($(player).css("top") - $(item).css("top")));
+        var il = parseInt($(item).css("left"));
+        var it = parseInt($(item).css("top"));
 
-        if (Math.abs($(player).css("left") - $(item).css("left")) < 10) {
+        console.log("PL " + pl);
+        console.log("PT " + pt);
+        console.log("IL " + il);
+        console.log("IT " + it);
 
-            if (Math.abs($(player).css("top") - $(item).css("top")) < 10) {
+        console.log("sameplace? x: " + Math.abs(pl - il));
+        console.log("sameplace? y: " + Math.abs(pt - it));
+
+        if (Math.abs(pl - il) < 10) {
+
+            if (Math.abs(pt - it) < 10) {
 
                 return true;
             }
