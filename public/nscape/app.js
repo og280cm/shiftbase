@@ -101,14 +101,23 @@ nscape.newGame = function() {
                     console.log("difference between server and client position is greater than 4");
                     console.log("accepting server version: " + p.left + ", " + p.top);
 
-                    $(".player." + number).css("left", p.left);
-                    $(".player." + number).css("top", p.top);
+                    // $(".player." + number).css("left", p.left);
+                    // $(".player." + number).css("top", p.top);
+
+                    var smoothleft = cl + ((cl - p.left) / 2);
+                    var smoothleft = ct + ((ct - p.top) / 2);
+
+                    $(".player." + number).css("left", smoothleft);
+                    $(".player." + number).css("top", smoothtop);
                 }
 
-                // if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
+                if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
 
-                //     console.log("p1 padleft1 sameplace");
-                // }
+                    console.log("p1 padleft1 sameplace");
+                } else {
+
+                    console.log("p1 padleft1 NOT sameplace");
+                }
 
                 var fleft = parseInt($(".player." + nscape.clientID).css("left"));
                 var ftop = parseInt($(".player." + nscape.clientID).css("top"));
