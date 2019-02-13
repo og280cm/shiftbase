@@ -29,6 +29,22 @@ nscape.newGame = function() {
         nscape.ws.send('{"request": "setup"}');
     }
 
+    var roomContents = "<div id='room1-pad-left-1'></div> <div id='room1-pad-left-2'></div> <div id='room1-pad-left-3'></div> <div id='room1-pad-left-4'></div> <div id='room1-pad-left-5'></div>" + 
+                       "<div id='room1-pad-right-1'></div><div id='room1-pad-right-2'></div><div id='room1-pad-right-3'></div><div id='room1-pad-right-4'></div><div id='room1-pad-right-5'></div>" + 
+                       "<div id='room1-output'>00000000</div><div id='room1-exit'></div>";
+
+    $("#room").addClass("room1");
+
+    $("#room").empty().append(roomContents);
+
+    nscape.sameplace = function(player, item) {
+
+        if (Math.abs($(player).css("left") - $(item).css("left")) < 10) {
+
+            console.log("yes sameplace");
+        }
+    }
+
     nscape.ws.onmessage = function(event) {
         console.log("onmessage");
 
@@ -55,6 +71,8 @@ nscape.newGame = function() {
 
         if (e.type == "state") {
 
+            $("#room").empty().append(roomContents);
+
             console.log(e);
 
             $.each(e.players, function(i, p) {
@@ -79,6 +97,11 @@ nscape.newGame = function() {
 
                     $(".player." + number).css("left", p.left);
                     $(".player." + number).css("top", p.top);
+                }
+
+                if (nscape.sameplace(".player.1", "#room1-pad-left-1")) {
+
+                    console.log("p1 padleft1 sameplace");
                 }
             });
         }
