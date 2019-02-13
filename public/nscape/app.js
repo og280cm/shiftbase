@@ -88,8 +88,8 @@ nscape.newGame = function() {
                     $("#room").append("<div class='player " + number + "'>" + number + "</div>");
                 }
 
-                var cl = $(".player." + number).css("left");
-                var ct = $(".player." + number).css("top");
+                var cl = parseInt($(".player." + number).css("left"));
+                var ct = parseInt($(".player." + number).css("top"));
 
                 console.log("cl: " + cl);
                 console.log("ct: " + ct);
