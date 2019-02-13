@@ -39,6 +39,11 @@ nscape.newGame = function() {
 
     nscape.sameplace = function(player, item) {
 
+        console.log("PL " + $(player).css("left"));
+        console.log("PT " + $(player).css("top"));
+        console.log("IL " + $(item).css("left"));
+        console.log("IT " + $(item).css("top"));
+
         console.log("sameplace? x: " + Math.abs($(player).css("left") - $(item).css("left")));
         console.log("sameplace? y: " + Math.abs($(player).css("top") - $(item).css("top")));
 
@@ -104,12 +109,12 @@ nscape.newGame = function() {
 
                 $(".player." + number).css("background-color", p.colour);
 
-                console.log("difference: " + Math.abs(cl - p.left) + Math.abs(ct - p.top));
+                console.log("difference: x: " + Math.abs(cl - p.left) + ", y: " + Math.abs(ct - p.top));
 
                 if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 8) {
 
                     // console.log("difference between server and client position is greater than 4");
-                    // console.log("accepting server version: " + p.left + ", " + p.top);
+                    console.log("adopting server version of position: " + p.left + ", " + p.top);
 
                     $(".player." + number).css("left", p.left);
                     $(".player." + number).css("top", p.top);
