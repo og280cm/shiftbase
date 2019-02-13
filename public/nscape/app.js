@@ -39,10 +39,18 @@ nscape.newGame = function() {
 
     nscape.sameplace = function(player, item) {
 
+        console.log("sameplace? x: " + Math.abs($(player).css("left") - $(item).css("left")));
+        console.log("sameplace? y: " + Math.abs($(player).css("top") - $(item).css("top")));
+
         if (Math.abs($(player).css("left") - $(item).css("left")) < 10) {
 
-            console.log("yes sameplace");
+            if (Math.abs($(player).css("top") - $(item).css("top")) < 10) {
+
+                return true;
+            }
         }
+
+        return false;
     }
 
     nscape.ws.onmessage = function(event) {
@@ -81,7 +89,7 @@ nscape.newGame = function() {
 
                 var number = p.number;
 
-                console.log("player id " + number);
+                // console.log("player id " + number);
 
                 if ($(".player." + number).length == 0) {
 
@@ -91,8 +99,8 @@ nscape.newGame = function() {
                 var cl = parseInt($(".player." + number).css("left"));
                 var ct = parseInt($(".player." + number).css("top"));
 
-                console.log("cl: " + cl);
-                console.log("ct: " + ct);
+                // console.log("cl: " + cl);
+                // console.log("ct: " + ct);
 
                 $(".player." + number).css("background-color", p.colour);
 
@@ -100,8 +108,8 @@ nscape.newGame = function() {
 
                 if (Math.abs(cl - p.left) + Math.abs(ct - p.top) > 8) {
 
-                    console.log("difference between server and client position is greater than 4");
-                    console.log("accepting server version: " + p.left + ", " + p.top);
+                    // console.log("difference between server and client position is greater than 4");
+                    // console.log("accepting server version: " + p.left + ", " + p.top);
 
                     $(".player." + number).css("left", p.left);
                     $(".player." + number).css("top", p.top);
