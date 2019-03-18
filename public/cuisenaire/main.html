@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    
+<title>Cuisenaire environment</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="../nrich/nrich-1.0.2.css" />
+<link rel="stylesheet" href="styles.0a1a8b9be44221e5.css" />
+
+<script src="../nrich/nrich-1.0.2.js"></script>
+<script src="../nrich/parseUri.js"></script>
+
+<script src="../jquery-ui.js"></script>
+<script src="../jquery.ui.touch-punch.min.js"></script>
+
+<script src="app.7947eca4e0a52617.js"></script>
+
+<script>
+$().ready(function(){
+
+    "use strict";
+
+    var url_string = window.location;
+    var url = parseUri(url_string);
+
+    console.log(url_string);
+    console.log(url);
+
+    var settings = {
+//        "level": url.queryKey["level"],
+        // "style": url.queryKey["style"]
+    }
+
+    // if (settings.level == undefined) {
+    //     settings.level = 1;
+    // }
+
+    // if (settings.style == undefined) {
+    //     settings.style = "textured";
+    // }
+
+    nrich.permittedSettings({
+        "options": {
+            // "level": [1, 2, 3],
+//            "style": ["textured", "flat"]
+        },
+        "current": settings,
+        "apply": cuisenaire.init,
+        "url": url.path
+    });
+    nrich.splash("pinks", true);
+
+    //countdown.init(settings);
+});
+</script>
+
+<body>
+<div id="container">
+    <div id="bar-bar">
+        <div class="create bar-1" bar=1></div>
+        <div class="create bar-2" bar=2></div>
+        <div class="create bar-3" bar=3></div>
+        <div class="create bar-4" bar=4></div>
+        <div class="create bar-5" bar=5></div>
+        <div class="create bar-6" bar=6></div>
+        <div class="create bar-7" bar=7></div>
+        <div class="create bar-8" bar=8></div>
+        <div class="create bar-9" bar=9></div>
+        <div class="create bar-10" bar=10></div>
+        <div id="bar-bin"></div>
+    </div>
+
+    <div id="problem"></div>
+
+    <div id="prev-problem">&lt;</div>
+    <div id="next-problem">&gt;</div>
+
+    <div id="instructions">
+        Arrange rods to represent the problem shown above
+    </div>
+    <div id="show-me-button">
+    Show me
+    </div>
+    <div id="restart-button">
+    Restart
+    </div>
+</div>
+<div id="nmenu">
+    <div class="nrich-settings-header">
+        Settings
+    </div>
+    <div class="nrich-settings-full-screen">
+        Settings will take effect when you apply them...
+    </div>
+    <div class="nrich-apply-same-window">
+        In the current window
+    </div>
+    <div class="nrich-apply-new-window">
+        In a resizable pop up window
+    </div>
+    <div class="nrich-settings-title">
+        Cuisenaire environment
+    </div>    
+</div>
+<div id="nsettings">
+</div>
+<div id="nrich">
+    <img class="hidden" id="cloud1" src="../nrich/cloud1.png"></img>
+    <img class="hidden" id="cloud2" src="../nrich/cloud2.png"></img>
+    <img class="hidden" id="cloud3" src="../nrich/cloud3.png"></img>
+    <img class="hidden" id="cloud4" src="../nrich/cloud4.png"></img>
+    <canvas id="nrich-canvas">
+</div>
+</body>
+</html>

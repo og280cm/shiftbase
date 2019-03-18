@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Cuisenaire environment</title>
+
+</head>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="../nrich/nrich-1.0.2.css" />
+<link rel="stylesheet" href="styles.0a1a8b9be44221e5.css" />
+
+<script src="../nrich/nrich-1.0.2.js"></script>
+<script src="../nrich/parseUri.js"></script>
+
+<script>
+
+var basePage = {
+  width: 702,
+  height: 668,
+  scale: 1,
+  scaleX: 1,
+  scaleY: 1
+};
+
+$(function(){
+
+  "use strict";
+
+  var url_string = window.location;
+  var url = parseUri(url_string);
+
+  console.log(url_string);
+  console.log(url);
+
+  console.log("--------------");
+  console.log(url.relative);
+  console.log(url.path);
+
+  // This simplifies the url in the window, which avoids the situation where the frame has outdated query parameters...
+  // Such as when the user has reloaded the frame contents with new parameters.
+  if (url.relative != url.path) {
+
+     var h = document.body.innerHTML;
+     var t = document.title;
+     window.history.pushState({"html": h,"pageTitle": t}, "", url.path);
+  }
+
+  console.log("appending iframe");
+  $(".goeshere").replaceWith("<iframe class='interactivity-frame' src='main.html?" + url.query + "' scrolling='no'></iframe>");
+
+  var interactivityContainer = $('.interactivity-container');
+  scalePages(interactivityContainer);
+
+  $(window).resize(function() {
+    console.log("resize");
+    scalePages(interactivityContainer);
+  });
+
+  function scalePages(page) {
+
+    var maxHeight = $('#page-container').height();
+    var maxWidth = $('#page-container').width();
+
+    var scaleX = 1;
+    var scaleY = 1;                      
+
+    scaleX = maxWidth / basePage.width;
+    scaleY = maxHeight / basePage.height;
+
+    basePage.scaleX = scaleX;
+    basePage.scaleY = scaleY;
+
+    if (scaleX > scaleY) {
+
+      basePage.scale = scaleY;
+//      $(".where").empty().append("scalex: " + basePage.scaleX.toFixed(2) + ", scaley: " + basePage.scaleY.toFixed(2) + "<br>x scale is bigger<br>");
+
+      var newLeftPos = (351 * basePage.scaleX) - 351;
+      var newTopPos = (324 * basePage.scale) - 324;
+
+    } else {
+
+      basePage.scale = scaleX;      
+//      $(".where").empty().append("scalex: " + basePage.scaleX.toFixed(2) + ", scaley: " + basePage.scaleY.toFixed(2) + "<br>y scale is bigger<br>");
+
+      var newLeftPos = (351 * basePage.scaleX) - 351;
+      var newTopPos = (324 * basePage.scale) - 324;
+    }
+
+    interactivityContainer.attr('style', '-webkit-transform:scale(' + basePage.scale + ')');
+
+    $(interactivityContainer).css("left", newLeftPos);
+    $(interactivityContainer).css("top", newTopPos);
+  }
+});
+
+</script>
+<body>
+
+<div id="page-container">
+  <div class="interactivity-container">
+<!--     <iframe class='interactivity-frame' src='main.html' scrolling='no'></iframe> -->
+    <div class="goeshere"></div>
+    <div id="promo-container">
+      <a id="promo-link" href="http://nrich.maths.org" target="_blank">
+        <div id="promo-responsive">
+          <span id="promo-text">NRICH - explore the home of rich mathematics</span>
+          <div id="promo-new-window"><img src="../nrich/newwindow.png" alt="This opens in a new window"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
