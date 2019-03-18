@@ -350,6 +350,8 @@ app.post('/nserve', (req, res) => {
 	}
 	else
 	if (g == "cuisenaire") {
+
+		console.log("received request for cuisenaire server");
 		res.send(cuisenaireServer.handle(i, j));
 	}
 	else {
