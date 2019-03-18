@@ -195,10 +195,48 @@ var nscapeServer = {
 	}
 };
 
+var cuisenaireServer = {
+	rooms: [],
+	start: (i, j) => {
+
+		console.log(">> cuisenaireServer - start...");
+		cuisenaireServer.rooms[i] = {};
+	},
+	update: (i, j) => {
+
+		console.log(">> cuisenaireServer - update with...");
+		console.log(j);
+
+		Object.keys(j).forEach(function(key) {
+			var val = j[key];
+			// console.log(key + " =>"); 
+			// console.log(val);
+
+			if (key == "arrival") {
+
+				console.log("new arrival");
+			}
+		});
+	},
+	handle: (i, j) => {
+		if (!nserveServer.rooms[i]) {
+
+			console.log(">> starting nserve room " + i)
+			nserveServer.start(i);
+		}
+
+		nserveServer.update(i, j);
+
+		return JSON.stringify(nserveServer.rooms[i]);
+	}
+};
 
 app.listen(8080, function() {
   console.log('listening on 8080')
 });
+
+
+
 
 // app.ws('/echo', function(ws, req) {
 
@@ -273,7 +311,6 @@ app.ws('/nscape', function(ws, req) {
   	  clients[m.data.ID].top = m.data.top;
   	}
   });
-
 });
 
 app.post('/nserve', (req, res) => {
@@ -310,6 +347,10 @@ app.post('/nserve', (req, res) => {
 	else
 	if (g == "nscape") {
 		res.send(nscape.handle(i, j));
+	}
+	else
+	if (g == "cuisenaire") {
+		res.send(cuisenaireServer.handle(i, j));
 	}
 	else {
 		res.send("no handler found for this game")
