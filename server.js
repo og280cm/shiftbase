@@ -246,26 +246,29 @@ app.listen(8080, function() {
 //   });
 // });
 
-var players = [{
-	colour: "#bae",
-	number: 3,
-	left: 50,
-	top: 50
-}, {
-	colour: "pink",
-	number: 2,
-	left: 150,
-	top: 50
-}, {
-	colour: "yellow",
-	number: 1,
-	left: 250,
-	top: 50
-}];
+// var players = [{
+// 	colour: "#bae",
+// 	number: 3,
+// 	left: 50,
+// 	top: 50
+// }, {
+// 	colour: "pink",
+// 	number: 2,
+// 	left: 150,
+// 	top: 50
+// }, {
+// 	colour: "yellow",
+// 	number: 1,
+// 	left: 250,
+// 	top: 50
+// }];
 
-var clients = {};
+var cs = {};
+cs.clients = [];
+cs.state = [];
+//cs.rooms = [];
 
-app.ws('/nscape', function(ws, req) {
+app.ws('/cuisenaire', function(ws, req) {
 
   console.log("ws");
 
@@ -282,33 +285,60 @@ app.ws('/nscape', function(ws, req) {
 	  console.log("SETUP request");
 
 	  // we assume the player is not trolling by requesting a second identify after loading once
-	  var newPlayer = players.pop();
+//	  var newPlayer = players.pop();
 
-	  clients[newPlayer.number] = newPlayer;
+	  var clientID = cs.clients.length + 1;
+
+	  if (clientID == 0) {
+	    cs.clients.push("{ 'role': 'leader' }");
+	  } else {
+	    cs.clients.push("{ 'role': 'watcher' }");
+	  }
+
+	  // clients[newPlayer.number] = newPlayer;
+
+	  console.log("ID = " + clientID);
 
 	  var json = {}
-	  json.type = "setup";
-	  json.ID = newPlayer;
+	  json.msgtype = "setup";
+	  json.ID = clientID;
 	  ws.send(JSON.stringify(json));
   	}
 
   	if (m.request == "state") {
 
-	  console.log("STATE request");
+	  console.log("STATE REQUEST from " + m.ID);
+	  // console.log(m);
 
 	  var json = {}
-	  json.type = "state";
-	  json.players = clients;
+	  json.msgtype = "state";
+
+  	  json.state = cs.state;
+  	  json.problem = cs.problem;
+
+	  json.ID = m.ID;
+
+	  console.log(JSON.stringify(json));
+
 	  ws.send(JSON.stringify(json));
   	}
 
-  	if (m.notify == "position") {
+  	if (m.notify == "state") {
 
-  	  console.log("POSITION set request from " + m.data.ID);
-  	  console.log(m);
+  	  // console.log("STATE NOTIFY from " + m.ID);
+  	  // console.log(m);
 
-  	  clients[m.data.ID].left = m.data.left;
-  	  clients[m.data.ID].top = m.data.top;
+	  if (m.ID == 1) {
+
+		console.log("STATE NOTIFY from #1 - recording state");
+
+	  	console.log(JSON.stringify(m.data.rods));
+
+	  	cs.state = m.data.rods;
+	  	cs.problem = m.data.problem;
+	  }
+
+	  // We don't send anything back to the client in this case
   	}
   });
 });
